@@ -1,4 +1,4 @@
-USE projetoSamp;
+USE ProjetoSamp;
 
 INSERT INTO Memoria (qtdMemoria)
 	VALUES (8.00);
@@ -91,7 +91,7 @@ INSERT INTO Maquina (idMaquina, fkEmpresa, nome, fkMemoria, fkProcessador, fkDis
 INSERT INTO Maquina (idMaquina, fkEmpresa, nome, fkMemoria, fkProcessador, fkDisco)
 	VALUES ('BR0204060812', 1, 'Data Base 02', 2, 2, 2);
     
-CREATE VIEW dadosMaquina
+CREATE VIEW DadosMaquina
 AS
 	SELECT
 		idMaquina,
@@ -114,22 +114,18 @@ AS
 	INNER JOIN
 		RegistroDisco ON Disco.idDisco = RegistroDisco.fkDisco
 	WHERE
-			idRegistroProcessador = idRegistroMemoria 
-        AND 
-			idRegistroProcessador = idRegistroDisco
-		/*
-		AND
-			idMaquina LIKE "BR0204060810"
-		*/
-	GROUP BY momento;
+		RegistroDisco.idRegistroDisco = RegistroMemoria.idRegistroMemoria
+			AND
+		RegistroProcessador.idRegistroProcessador = RegistroDisco.idRegistroDisco;
     
 /* ????? */
-select * from dadosMaquina where idMaquina LIKE 'BR0204060812';
+select * from DadosMaquina WHERE idMaquina LIKE 'BR0204060812';
 
 select * from maquina;
 
 SELECT * FROM DISCO;
 
+drop view DadosMaquina;
 SELECT * FROM PROCESSADOR;
 
 SELECT * FROM MEMORIA;
@@ -140,4 +136,4 @@ SELECT * FROM REGISTROPROCESSADOR;
 
 SELECT * FROM REGISTROMEMORIA;
 
-drop view dadosMaquina;
+drop view DadosMaquina;
