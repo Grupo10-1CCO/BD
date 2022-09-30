@@ -1,3 +1,14 @@
+/* 
+	Script Grupo 03 | Projeto SAMP: Sistema de Análise e Monitoramento do Pix
+	Integrantes:
+    Alyfy | RA: 02221062
+    Danylo | RA: 02221004
+    Davi Guilherme | RA: 02221042
+    Filipe Filipus | RA: 02221059
+    João Barreto | RA: 02221024
+    Leonardo Tresinari | RA: 02221027
+*/
+
 CREATE DATABASE ProjetoSamp;
 USE ProjetoSamp;
 
@@ -76,5 +87,3 @@ CREATE TABLE Maquina (
 ) AUTO_INCREMENT = 1;
 
 insert into Empresa values(null, 'C6', 'c6@email.com.br','22222222222222');
-select * from Empresa;
-select * from Usuario;

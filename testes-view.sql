@@ -1,3 +1,14 @@
+/* 
+	Script Grupo 03 | Projeto SAMP: Sistema de Análise e Monitoramento do Pix
+	Integrantes:
+    Alyfy | RA: 02221062
+    Danylo | RA: 02221004
+    Davi Guilherme | RA: 02221042
+    Filipe Filipus | RA: 02221059
+    João Barreto | RA: 02221024
+    Leonardo Tresinari | RA: 02221027
+*/
+
 USE ProjetoSamp;
 
 INSERT INTO Memoria (qtdMemoria)
@@ -118,22 +129,4 @@ AS
 			AND
 		RegistroProcessador.idRegistroProcessador = RegistroDisco.idRegistroDisco;
     
-/* ????? */
-select * from DadosMaquina WHERE idMaquina LIKE 'BR0204060812';
-
-select * from maquina;
-
-SELECT * FROM DISCO;
-
-drop view DadosMaquina;
-SELECT * FROM PROCESSADOR;
-
-SELECT * FROM MEMORIA;
-
-SELECT * FROM REGISTRODISCO;
-
-SELECT * FROM REGISTROPROCESSADOR;
-
-SELECT * FROM REGISTROMEMORIA;
-
-drop view DadosMaquina;
+select * from DadosMaquina;
