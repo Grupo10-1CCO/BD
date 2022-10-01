@@ -20,7 +20,8 @@ CREATE TABLE Usuario(
 );
 
 CREATE TABLE Maquina(
-	idMaquina CHAR(12) PRIMARY KEY,
+	idMaquina INT PRIMARY KEY AUTO_INCREMENT,
+	serialMaquina CHAR(12),
     nome VARCHAR(100),
     fkEmpresa INT,
     FOREIGN KEY (fkEmpresa) REFERENCES Empresa(idEmpresa)
@@ -40,7 +41,7 @@ CREATE TABLE Metrica(
 CREATE TABLE Componente(
 	idComponente INT PRIMARY KEY AUTO_INCREMENT,
     nomeComponente VARCHAR (50),
-    fkMaquina CHAR(12),
+    fkMaquina INT,
     fkMetrica INT,
     fkMedida INT,
     FOREIGN KEY (fkMaquina) REFERENCES Maquina (idMaquina),
@@ -48,7 +49,7 @@ CREATE TABLE Componente(
     FOREIGN KEY (fkMedida) REFERENCES Medida (idMedida)
 );
 
-CREATE TABLE Registro(
+CREATE TABLE Dados(
 	idRegistro INT PRIMARY KEY AUTO_INCREMENT,
     registro DOUBLE,
     momento DATETIME,

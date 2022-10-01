@@ -128,5 +128,5 @@ AS
 		RegistroDisco.idRegistroDisco = RegistroMemoria.idRegistroMemoria
 			AND
 		RegistroProcessador.idRegistroProcessador = RegistroDisco.idRegistroDisco;
-    
+	
 select * from DadosMaquina;
