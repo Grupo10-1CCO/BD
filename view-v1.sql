@@ -1,8 +1,21 @@
 USE SAMP;
 
+INSERT INTO Dados(fkComponente, registro, momento)
+	VALUES (2, 50, '2022-09-29 21:15:00');
+    
+SELECT
+					idRegistro,
+                    fkComponente,
+                    nomeComponente, 
+                    registro, 
+                    unidadeMedida, 
+                    DATE_FORMAT(momento,'%d/%m/%Y %H:%i:%s') 
+                AS momento_grafico FROM DadosServidor WHERE idMaquina = 1 ORDER BY idRegistro DESC LIMIT 1;
+
 CREATE VIEW DadosServidor
 AS
 	SELECT
+		idRegistro,
 		idMaquina,
         fkComponente,
         nomeComponente,
@@ -44,8 +57,12 @@ AS
 	FROM
 		DadosServidor
 	GROUP BY fkComponente;
+    
+    select * from DadosServidor;
         
 SELECT * FROM DadosServidor;
+
+SELECT * FROM Usuario;
 
 SELECT * FROM MediaUsoComponente;
 

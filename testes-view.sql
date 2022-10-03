@@ -1,14 +1,3 @@
-/* 
-	Script Grupo 03 | Projeto SAMP: Sistema de Análise e Monitoramento do Pix
-	Integrantes:
-    Alyfy | RA: 02221062
-    Danylo | RA: 02221004
-    Davi Guilherme | RA: 02221042
-    Filipe Filipus | RA: 02221059
-    João Barreto | RA: 02221024
-    Leonardo Tresinari | RA: 02221027
-*/
-
 USE ProjetoSamp;
 
 INSERT INTO Memoria (qtdMemoria)
@@ -105,13 +94,16 @@ INSERT INTO Maquina (idMaquina, fkEmpresa, nome, fkMemoria, fkProcessador, fkDis
 CREATE VIEW DadosMaquina
 AS
 	SELECT
+		idEmpresa,
 		idMaquina,
         usoMemoria,
         usoProcessador,
         usoDisco,
         RegistroMemoria.momento
 	FROM
-		Maquina
+		Empresa
+	INNER JOIN
+		Maquina ON Empresa.idEmpresa = Maquina.fkEmpresa
 	INNER JOIN
 		Memoria ON Maquina.fkMemoria = Memoria.idMemoria
 	INNER JOIN
@@ -128,5 +120,16 @@ AS
 		RegistroDisco.idRegistroDisco = RegistroMemoria.idRegistroMemoria
 			AND
 		RegistroProcessador.idRegistroProcessador = RegistroDisco.idRegistroDisco;
-	
-select * from DadosMaquina;
+
+
+
+
+
+
+SELECT * FROM DadosMaquina WHERE idEmpresa = 1;
+
+SELECT * FROM DadosMaquina WHERE idMaquina LIKE 'BR0204060812';
+
+SELECT * FROM DadosMaquina WHERE idMaquina LIKE 'BR0204060810';
+
+DROP VIEW DadosMaquina;
