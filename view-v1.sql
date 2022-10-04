@@ -46,19 +46,6 @@ AS
 	INNER JOIN
 		Dados ON Componente.idComponente = Dados.fkComponente
 	GROUP BY fkComponente;
-    
-CREATE VIEW MediaUsoComponente
-AS
-	SELECT
-		idMaquina,
-        fkComponente,
-        nomeComponente,
-        ROUND(AVG(registro), 2) AS 'MediaUso'
-	FROM
-		DadosServidor
-	GROUP BY fkComponente;
-    
-    select * from DadosServidor;
         
 SELECT * FROM DadosServidor;
 
