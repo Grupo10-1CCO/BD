@@ -1,8 +1,5 @@
 USE SAMP;
 
-INSERT INTO Dados(fkComponente, registro, momento)
-	VALUES (2, 50, '2022-09-29 21:15:00');
-    
 SELECT
 					idRegistro,
                     fkComponente,
@@ -15,15 +12,18 @@ SELECT
 CREATE VIEW DadosServidor
 AS
 	SELECT
+		idEmpresa,
 		idRegistro,
 		idMaquina,
         fkComponente,
         nomeComponente,
         registro,
-        momento,
+        DATE_FORMAT(momento,'%d/%m/%Y %H:%i:%s') AS 'momento',
         unidadeMedida
 	FROM
 		Maquina
+	INNER JOIN
+		Empresa ON Maquina.fkEmpresa = Empresa.idEmpresa
 	INNER JOIN
 		Componente ON Maquina.idMaquina = Componente.fkMaquina
 	INNER JOIN
