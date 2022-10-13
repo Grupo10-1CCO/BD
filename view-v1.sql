@@ -8,6 +8,7 @@ AS
 		idMaquina,
         fkComponente,
         nomeComponente,
+        tamanho,
         registro,
         DATE_FORMAT(momento,'%d/%m/%Y %H:%i:%s') AS 'momento',
         unidadeMedida

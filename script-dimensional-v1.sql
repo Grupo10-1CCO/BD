@@ -41,6 +41,7 @@ CREATE TABLE Metrica(
 CREATE TABLE Componente(
 	idComponente INT PRIMARY KEY AUTO_INCREMENT,
     nomeComponente VARCHAR (50),
+    tamanho DOUBLE,
     fkMaquina INT,
     fkMetrica INT,
     fkMedida INT,

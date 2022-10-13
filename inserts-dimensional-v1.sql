@@ -22,14 +22,14 @@ INSERT INTO Metrica (capturaMin, capturaMax)
             (20.0, 75.0),
             (20.0, 80.0);
             
-INSERT INTO Componente (nomeComponente, fkMaquina, fkMetrica, fkMedida)
-	VALUES ('RAM', 1, 5, 1),
-			('CPU', 1, NULL, 1),
-            ('Disco', 1, 6, 1),
-            ('Disco', 1, 4, 1),
-            ('RAM', 2, 4, 1),
-			('CPU', 2, NULL, 1),
-            ('Disco', 2, 5, 1);
+INSERT INTO Componente (nomeComponente, tamanho, fkMaquina, fkMetrica, fkMedida)
+	VALUES ('RAM', 6.00, 1, 5, 1),
+			('CPU', NULL, 1, NULL, 1),
+            ('Disco', 850.00, 1, 6, 1),
+            ('Disco', 500.00, 1, 4, 1),
+            ('RAM', 12.00, 2, 4, 1),
+			('CPU', NULL, 2, NULL, 1),
+            ('Disco', 400.00, 2, 5, 1);
             
 INSERT INTO Dados (momento, registro, fkComponente)
 	VALUES ('2022-09-29 20:00:00', 65.00, 1),
