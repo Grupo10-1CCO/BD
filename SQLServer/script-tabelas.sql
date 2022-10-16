@@ -41,6 +41,7 @@ CREATE TABLE Metrica (
 CREATE TABLE Componente (
 	idComponente INT PRIMARY KEY IDENTITY (1,1)
 	, nomeComponente VARCHAR (50) NOT NULL
+	, tamanho FLOAT
 	, fkMaquina INT
 	, fkMedida INT
 	, fkMetrica INT

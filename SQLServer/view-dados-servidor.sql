@@ -6,6 +6,7 @@ AS
 		idMaquina,
         fkComponente,
         nomeComponente,
+		tamanho,
         registro,
 		(SELECT FORMAT (momento, 'dd/MM/yyyy hh:mm:ss ')) AS 'momento',
         unidadeMedida
