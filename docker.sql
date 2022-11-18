@@ -36,3 +36,5 @@ CREATE TABLE Dados(
     fkComponente INT,
     FOREIGN KEY (fkComponente) REFERENCES Componente (idComponente)
 );
+
+INSERT INTO Medida (unidadeMedida) VALUES ('%');
